@@ -1,6 +1,27 @@
 <resources>
-    <string name="app_name">Neurokit</string>
+    <string name="app_name">NeuroKit</string>
+
+    Navigation
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    Study Session
+    <string name="study_session_title">Sesi Belajar</string>
+    <string name="pause_session">Jeda Sesi</string>
+    <string name="stop_session">Hentikan Sesi</string>
+    <string name="continue_session">Lanjutkan Sesi</string>
+
+    Study Pause
+    <string name="pause_title">Wih.. Jeda dulu</string>
+    <string name="pause_subtitle">Tapi fokusnya jangan kabur</string>
+
+    Study Complete
+    <string name="complete_title">Sesi Fokus Selesai!</string>
+    <string name="complete_subtitle">Kerja bagus!</string>
+    <string name="points_earned">kamu mendapatkan %d poin</string>
+    <string name="home_button">Home</string>
+
+    Timer
+    <string name="timer_format">%02d:%02d:%02d</string>
 </resources>

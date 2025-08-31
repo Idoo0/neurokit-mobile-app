@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    Button Styles
+    <style name="PrimaryButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+        <item name="android:layout_marginHorizontal" tools:ignore="NewApi">@dimen/button_margin</item>
+        <item name="android:layout_marginVertical" tools:ignore="NewApi">@dimen/margin_small</item>
+    </style>
+
+    <style name="SecondaryButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:background">@drawable/bg_button_secondary</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:fontFamily">@font/urbanist_medium</item>
+        <item name="android:layout_marginHorizontal" tools:ignore="NewApi">@dimen/button_margin</item>
+        <item name="android:layout_marginVertical" tools:ignore="NewApi">@dimen/margin_small</item>
+    </style>
+
+    Text Styles
+    <style name="TimerText">
+        <item name="android:textSize">@dimen/text_size_timer</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TitleText">
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="SubtitleText">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/urbanist_regular</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>
