@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.neurokit.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_study_complete" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -22,4 +22,37 @@
         android:name="com.example.neurokit.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/studySessionFragment"
+        android:name="com.example.neurokit.ui.study.StudySessionFragment"
+        android:label="Study Session">
+        <action
+            android:id="@+id/action_session_to_pause"
+            app:destination="@id/studyPauseFragment" />
+        <action
+            android:id="@+id/action_session_to_complete"
+            app:destination="@id/studyCompleteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studyPauseFragment"
+        android:name="com.example.neurokit.ui.study.StudyPauseFragment"
+        android:label="Study Pause">
+        <action
+            android:id="@+id/action_pause_to_session"
+            app:destination="@id/studySessionFragment" />
+        <action
+            android:id="@+id/action_pause_to_complete"
+            app:destination="@id/studyCompleteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studyCompleteFragment"
+        android:name="com.example.neurokit.ui.study.StudyCompleteFragment"
+        android:label="Study Complete">
+        <action
+            android:id="@+id/action_complete_to_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 </navigation>
