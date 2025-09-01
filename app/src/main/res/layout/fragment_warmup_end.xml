@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.warmup.WarmupEndFragment">
+
+    <!-- Progress bar penuh -->
+    <ProgressBar
+        android:id="@+id/progress_bar_completed"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="8"
+        android:progress="8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Pesan Selesai -->
+    <TextView
+        android:id="@+id/text_end_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Warm Up Selesai!"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar_completed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Tampilan Bintang (Rating) -->
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:numStars="3"
+        android:rating="3"
+        android:stepSize="0.5"
+        android:isIndicator="true"
+        app:layout_constraintTop_toBottomOf="@id/text_end_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Baris untuk 3 statistik -->
+    <LinearLayout
+        android:id="@+id/layout_stats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@id/rating_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Stat Waktu -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waktu"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/text_stat_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1m 20s"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Stat Poin -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poin"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/text_stat_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="450"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Stat Persentase -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Akurasi"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/text_stat_accuracy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="85%"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_finish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Selesai"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

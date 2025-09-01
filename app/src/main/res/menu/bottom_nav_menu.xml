@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />
 
+    <item
+        android:id="@+id/warmupStartFragment"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="Warm Up" />
+
 </menu>
