@@ -55,4 +55,6 @@
             android:id="@+id/action_complete_to_home"
             app:destination="@id/navigation_home" />
     </fragment>
+
+    <include app:graph="@navigation/warmup_navigation" />
 </navigation>
