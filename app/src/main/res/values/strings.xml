@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">NeuroKit</string>
-
+    SPLASH
+    <string name="get_started_description">Belajar jadi seru dengan cahaya, suara, dan semangat bikin fokusmu tahan lama &amp; ingatan makin kuat</string>
+    <string name="get_started">Get Started</string>
+    <string name="skip">Skip</string>
     Navigation
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
