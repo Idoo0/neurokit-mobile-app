@@ -5,75 +5,53 @@
     android:id="@+id/warmup_navigation"
     app:startDestination="@id/warmupStartFragment">
 
-    <!-- 1. Layar Awal untuk memilih mode -->
     <fragment
         android:id="@+id/warmupStartFragment"
         android:name="com.example.neurokit.ui.warmup.WarmupStartFragment"
-        android:label="fragment_warmup_start"
-        tools:layout="@layout/fragment_warmup_start" >
-        <!-- Aksi untuk pindah dari start ke question -->
+        android:label="Warmup Start"
+        tools:layout="@layout/fragment_warmup_start">
         <action
             android:id="@+id/action_warmupStartFragment_to_warmupQuestionFragment"
             app:destination="@id/warmupQuestionFragment" />
     </fragment>
 
-    <!-- 2. Layar Soal Kuis -->
     <fragment
         android:id="@+id/warmupQuestionFragment"
         android:name="com.example.neurokit.ui.warmup.WarmupQuestionFragment"
-        android:label="fragment_warmup_question"
-        tools:layout="@layout/fragment_warmup_question" >
-        <!-- Aksi untuk pindah dari question ke result -->
+        android:label="Warmup Question"
+        tools:layout="@layout/fragment_warmup_question">
+
         <action
             android:id="@+id/action_warmupQuestionFragment_to_warmupResultFragment"
             app:destination="@id/warmupResultFragment" />
+
+        <action
+            android:id="@+id/action_warmupQuestionFragment_to_warmupEndFragment"
+            app:destination="@id/warmupEndFragment" />
     </fragment>
 
-    <!-- 3. Layar Hasil per Soal -->
     <fragment
         android:id="@+id/warmupResultFragment"
         android:name="com.example.neurokit.ui.warmup.WarmupResultFragment"
-        android:label="fragment_warmup_result"
+        android:label="Warmup Result"
         tools:layout="@layout/fragment_warmup_result" >
-        <!-- Menambahkan argumen untuk menerima status jawaban -->
-        <argument
-            android:name="isCorrect"
-            app:argType="boolean"
-            android:defaultValue="false" />
-        <!-- Aksi untuk kembali ke soal (tanpa popUpTo) -->
         <action
             android:id="@+id/action_warmupResultFragment_to_warmupQuestionFragment"
-            app:destination="@id/warmupQuestionFragment"/>
-        <!-- Aksi untuk pindah ke layar akhir -->
-        <action
-            android:id="@+id/action_warmupResultFragment_to_warmupEndFragment"
-            app:destination="@id/warmupEndFragment"
-            app:popUpTo="@id/warmupStartFragment" />
+            app:destination="@id/warmupQuestionFragment"
+            app:popUpTo="@id/warmupQuestionFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
-    <!-- 4. Layar Skor Akhir -->
     <fragment
         android:id="@+id/warmupEndFragment"
         android:name="com.example.neurokit.ui.warmup.WarmupEndFragment"
-        android:label="fragment_warmup_end"
+        android:label="Warmup End"
         tools:layout="@layout/fragment_warmup_end" >
-        <argument
-            android:name="totalScore"
-            app:argType="integer"
-            android:defaultValue="0" />
-        <argument
-            android:name="totalCorrect"
-            app:argType="integer"
-            android:defaultValue="0" />
-        <argument
-            android:name="totalTimeSeconds"
-            app:argType="long"
-            android:defaultValue="0L" />
         <action
-            android:id="@+id/action_warmupEndFragment_to_navigation_home"
-            app:destination="@id/navigation_home"
-            app:popUpTo="@id/navigation_home"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/action_warmupEndFragment_to_warmupStartFragment"
+            app:destination="@id/warmupStartFragment"
+            app:popUpTo="@id/warmupStartFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>

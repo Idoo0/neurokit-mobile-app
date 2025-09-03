@@ -5,67 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".ui.warmup.WarmupResultFragment">
+    tools:context=".ui.warmup.WarmupQuestionFragment">
 
-    <!-- Progress bar yang sama -->
     <ProgressBar
-        android:id="@+id/progress_bar"
+        android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:max="8"
-        tools:progress="1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/text_progress_indicator"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/text_progress_indicator"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:max="8"
+        tools:progress="1" />
 
     <TextView
         android:id="@+id/text_progress_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        tools:text="1/8"
         android:textSize="16sp"
-        app:layout_constraintTop_toTopOf="@id/progress_bar"
-        app:layout_constraintBottom_toBottomOf="@id/progress_bar"
+        app:layout_constraintBottom_toBottomOf="@id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/progress_bar"/>
+        app:layout_constraintStart_toEndOf="@id/progressBar"
+        app:layout_constraintTop_toTopOf="@id/progressBar"
+        tools:text="1/8" />
 
-    <!-- Pesan Hasil (Benar/Salah) -->
     <TextView
-        android:id="@+id/text_result_message"
+        android:id="@+id/textViewDigit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="48sp"
+        android:textSize="96sp"
         android:textStyle="bold"
-        tools:text="Benar!"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.3"/>
-
-    <!-- Gambar Maskot -->
-    <ImageView
-        android:id="@+id/image_mascot"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="24dp"
-        android:src="@android:drawable/star_on"
-        app:layout_constraintTop_toBottomOf="@id/text_result_message"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        tools:text="7"
+        tools:visibility="visible" />
 
-    <!-- Tombol Lanjut -->
-    <Button
-        android:id="@+id/button_next"
+    <EditText
+        android:id="@+id/editTextAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Lanjut"
+        android:layout_marginBottom="16dp"
+        android:hint="Ketik jawabanmu di sini"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/buttonSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:padding="16dp"
+        android:text="Kirim Jawaban"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
